@@ -84,13 +84,13 @@ class Status
 
         cout << cColor << "Enter the base length of " << triangle;
         validateDouble(b);
-        pt.setBase(b);
+        pt1.setBase(b);
 
         drawStatus();
 
         cout << cColor << "Enter the height of"  << triangle;
         validateDouble(h);
-        t.setHeight(h);
+        pt1.setHeight(h);
 
         drawStatus();
 
