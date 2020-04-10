@@ -6,7 +6,6 @@
   https://repl.it/@ChetLockwood/TriangleClassLockwood
 */
 #include "Status.h"
-#include "Triangle.h"
 
 //Main Function *********************************************************************
 int main() 

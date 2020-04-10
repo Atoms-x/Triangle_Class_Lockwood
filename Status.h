@@ -42,33 +42,28 @@ class Status
       double b = 0, h = 0;
       char decision = '\0';
       static int count = 0;
-      string cColor = "";
-      string triangle = "";
-
+    
       do
       {
         if (count == 0)
         {
-          cColor = cBlue;
-          triangle = "triangle 1:\t";
-
           do
           {
             drawStatus();
 
-            cout << cColor << "Enter the base length of " << triangle;
+            cout << cBlue << "Enter the base length of triangle 1:\t";
             validateDouble(b);
             pt1.setBase(b);
 
             drawStatus();
 
-            cout << cColor << "Enter the height of"  << triangle;
+            cout << cBlue << "Enter the height of triangle 1:\t";
             validateDouble(h);
             pt1.setHeight(h);
 
             drawStatus();
 
-            cout << cColor << "Are you sure about these measurements?\t";
+            cout << cBlue << "Are you sure about these measurements?\t";
             validateChar(decision);
 
           } while(decision != 'y' && decision != 'Y');
@@ -78,26 +73,23 @@ class Status
         
         else if (count == 1)
         {
-          cColor = cRed;
-          triangle = "triangle 2:\t";
-
           do
           {
             drawStatus();
 
-            cout << cColor << "Enter the base length of " << triangle;
+            cout << cRed << "Enter the base length of triangle 2:\t";
             validateDouble(b);
             pt2.setBase(b);
 
             drawStatus();
 
-            cout << cColor << "Enter the height of"  << triangle;
+            cout << cRed << "Enter the height of triangle 2:\t";
             validateDouble(h);
             pt2.setHeight(h);
 
             drawStatus();
 
-            cout << cColor << "Are you sure about these measurements?\t";
+            cout << cRed << "Are you sure about these measurements?\t";
             validateChar(decision);
 
           } while(decision != 'y' && decision != 'Y');
@@ -106,26 +98,23 @@ class Status
         }
         else
         {
-          cColor = cGreen;
-          triangle = "triangle 3:\t";
-
           do
           {
             drawStatus();
 
-            cout << cColor << "Enter the base length of " << triangle;
+            cout << cGreen << "Enter the base length of triangle 3:\t";
             validateDouble(b);
             pt3.setBase(b);
 
             drawStatus();
 
-            cout << cColor << "Enter the height of"  << triangle;
+            cout << cGreen << "Enter the height of triangle 3:\t";
             validateDouble(h);
             pt3.setHeight(h);
 
             drawStatus();
 
-            cout << cColor << "Are you sure about these measurements?\t";
+            cout << cGreen << "Are you sure about these measurements?\t";
             validateChar(decision);
 
           } while(decision != 'y' && decision != 'Y');
