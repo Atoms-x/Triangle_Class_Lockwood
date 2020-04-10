@@ -9,81 +9,19 @@
 #include <string>
 #include "Triangle.h"
 
+//Global classes (cuts down on uneccessary code expansion for scope of program)
+Triangle t1, t2, t3;
+
 void drawStatus(Triangle &, Triangle &, Triangle &);
 void menu(Triangle &);
 
 //Main Function *********************************************************************
 int main() 
 {
-  Triangle t1, t2, t3;
-  
   menu(t1);
   menu(t2);
   menu(t3);
-/*
-  do
-  {
-    drawStatus(t1, t2, t3);
 
-    cout << cBlue << "Enter the base length of triangle 1: \t";
-    validateDouble(b);
-    t1.setBase(b);
-
-    drawStatus(t1, t2, t3);
-
-    cout << cBlue << "Enter the height of triangle 1: \t";
-    validateDouble(h);
-    t1.setHeight(h);
-
-    drawStatus(t1, t2, t3);
-
-    cout << cBlue << "Are you sure about these measurements?\t";
-    validateChar(decision);
-
-  }while(decision != 'y' && decision != 'Y');
-
-  do
-  {
-    drawStatus(t1, t2, t3);
-
-    cout << cRed << "Enter the base length of triangle 2: \t";
-    validateDouble(b);
-    t2.setBase(b);
-
-    drawStatus(t1, t2, t3);
-
-    cout << cRed << "Enter the height of triangle 2: \t";
-    validateDouble(h);
-    t2.setHeight(h);
-
-    drawStatus(t1, t2, t3);
-
-    cout << cRed << "Are you sure about these measurements?\t";
-    validateChar(decision);
-
-  }while(decision != 'y' && decision != 'Y');
-
-  do
-  {
-    drawStatus(t1, t2, t3);
-
-    cout << "Enter the base length of triangle 1: \t";
-    validateDouble(b);
-    t3.setBase(b);
-
-    drawStatus(t1, t2, t3);
-
-    cout << "Enter the height of triangle 1: \t";
-    validateDouble(h);
-    t3.setHeight(h);
-
-    drawStatus(t1, t2, t3);
-
-    cout << "Are you sure about these measurements?\t";
-    validateChar(decision);
-
-  }while(decision != 'y' && decision != 'Y');
-*/
   drawStatus(t1, t2, t3);
   
   return 0;
@@ -92,7 +30,7 @@ int main()
 
 void drawStatus(Triangle &t1, Triangle &t2, Triangle &t3)
 {
-  cout << cClear << cReset << cUnderL << "Areat of a Triangle (bh/2)\n";
+  cout << cClear << cReset << cUnderL << "Area of a Triangle - (bh/2)\n\n";
 
   cout << cReset << cBlue << "Triangle 1 Base: " << t1.getBase() << "\n";
   cout << "Triangle 1 Height: " << t1.getHeight() << "\n";
@@ -109,28 +47,49 @@ void drawStatus(Triangle &t1, Triangle &t2, Triangle &t3)
 
 void menu(Triangle &t)
 {
-  Triangle t1, t2, t3;
   double b = 0, h = 0;
   char decision = '\0';
+  static int count = 0;
+  string cColor = "";
+  string triangle = "";
 
+  if (count == 0)
+  {
+    cColor = cBlue;
+    triangle = "triangle 1:\t";
+  }  
+  
+  else if (count == 1)
+  {
+    cColor = cRed;
+    triangle = "triangle 2:\t";
+  }
+  else
+  {
+    cColor = cGreen;
+    triangle = "triangle 3:\t";
+  }
+  
   do
   {
     drawStatus(t1, t2, t3);
 
-    cout << cBlue << "Enter the base length of triangle 1: \t";
+    cout << cColor << "Enter the base length of " << triangle;
     validateDouble(b);
     t.setBase(b);
 
     drawStatus(t1, t2, t3);
 
-    cout << cBlue << "Enter the height of triangle 1: \t";
+    cout << cColor << "Enter the height of"  << triangle;
     validateDouble(h);
     t.setHeight(h);
 
     drawStatus(t1, t2, t3);
 
-    cout << cBlue << "Are you sure about these measurements?\t";
+    cout << cColor << "Are you sure about these measurements?\t";
     validateChar(decision);
 
   }while(decision != 'y' && decision != 'Y');
+
+  count++;
 }
