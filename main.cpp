@@ -5,30 +5,37 @@
   Program:  Triangle Area Calculator QUIZ 3
   https://repl.it/@ChetLockwood/TriangleClassLockwood
 */
-
-#include <string>
+#include "Status.h"
 #include "Triangle.h"
 
 //Global classes (cuts down on uneccessary code expansion for scope of program)
-Triangle t1, t2, t3;
+//Triangle t1, t2, t3;
 
-void drawStatus(Triangle &, Triangle &, Triangle &);
-void menu(Triangle &);
+//void drawStatus(Triangle &, Triangle &, Triangle &);
+//void menu(Triangle &);
 
 //Main Function *********************************************************************
 int main() 
 {
-  menu(t1);
-  menu(t2);
-  menu(t3);
+  Triangle t1, t2, t3;
 
-  drawStatus(t1, t2, t3);
+  Status s;
+
+  s.setT1(t1);
+  s.setT2(t2);
+  s.setT3(t3);
+
+  s.menu(s);
+  s.menu(s);
+  s.menu(s);
+
+  s.drawStatus();
   
   return 0;
 }
 //Function Defintions ****************************************************************
 
-void drawStatus(Triangle &t1, Triangle &t2, Triangle &t3)
+/*void drawStatus(Triangle &t1, Triangle &t2, Triangle &t3)
 {
   cout << cClear << cReset << cUnderL << "Area of a Triangle - (bh/2)\n\n";
 
@@ -43,8 +50,8 @@ void drawStatus(Triangle &t1, Triangle &t2, Triangle &t3)
   cout << cGreen << "Triangle 3 Base: " << t3.getBase() << "\n";
   cout << "Triangle 3 Height: " << t3.getHeight() << "\n";
   cout << "Triangle 3 Area: " << t3.getArea() << "\n\n\n\n";
-}
-
+}*/
+/*
 void menu(Triangle &t)
 {
   double b = 0, h = 0;
@@ -92,4 +99,4 @@ void menu(Triangle &t)
   }while(decision != 'y' && decision != 'Y');
 
   count++;
-}
+}*/
